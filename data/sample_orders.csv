@@ -1,0 +1,301 @@
+order_id,order_date,channel,product,quantity,unit_price,total
+KB-0001,2026-01-01,TikTok Shop,Corrente Flex,1,24.9,24.9
+KB-0002,2026-01-02,Shopee,Esfera Labirinto,1,59.9,59.9
+KB-0003,2026-01-03,TikTok Shop,Cubo Espiral,1,15.9,15.9
+KB-0004,2026-01-03,Nuvemshop,Cubo Espiral,3,15.9,47.7
+KB-0005,2026-01-04,Shopee,Roda Zen,2,29.9,59.8
+KB-0006,2026-01-05,Shopee,Engrenagem Infinita,3,54.9,164.7
+KB-0007,2026-01-08,TikTok Shop,Esfera Labirinto,2,59.9,119.8
+KB-0008,2026-01-10,TikTok Shop,Roda Zen,3,29.9,89.7
+KB-0009,2026-01-10,Nuvemshop,Corrente Flex,3,24.9,74.7
+KB-0010,2026-01-11,Shopee,Clique Hexa,2,39.9,79.8
+KB-0011,2026-01-12,TikTok Shop,Roda Zen,1,29.9,29.9
+KB-0012,2026-01-17,Nuvemshop,Anel Giratório,1,19.9,19.9
+KB-0013,2026-01-18,TikTok Shop,Gota Deslizante,1,49.9,49.9
+KB-0014,2026-01-19,TikTok Shop,Gota Deslizante,1,49.9,49.9
+KB-0015,2026-01-21,Shopee,Roda Zen,1,29.9,29.9
+KB-0016,2026-01-22,TikTok Shop,Pião Mini,1,44.9,44.9
+KB-0017,2026-01-22,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0018,2026-01-24,Nuvemshop,Engrenagem Infinita,1,54.9,54.9
+KB-0019,2026-01-26,TikTok Shop,Serpente Articulada,1,34.9,34.9
+KB-0020,2026-01-26,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0021,2026-01-26,Shopee,Clique Hexa,2,39.9,79.8
+KB-0022,2026-01-27,Nuvemshop,Esfera Labirinto,4,59.9,239.6
+KB-0023,2026-01-27,Nuvemshop,Esfera Labirinto,1,59.9,59.9
+KB-0024,2026-01-28,TikTok Shop,Pião Mini,1,44.9,44.9
+KB-0025,2026-01-30,TikTok Shop,Engrenagem Infinita,2,54.9,109.8
+KB-0026,2026-01-30,Nuvemshop,Roda Zen,1,29.9,29.9
+KB-0027,2026-02-01,Shopee,Clique Hexa,2,39.9,79.8
+KB-0028,2026-02-01,Shopee,Anel Giratório,2,19.9,39.8
+KB-0029,2026-02-03,Shopee,Serpente Articulada,2,34.9,69.8
+KB-0030,2026-02-03,Nuvemshop,Serpente Articulada,1,34.9,34.9
+KB-0031,2026-02-03,TikTok Shop,Pião Mini,2,44.9,89.8
+KB-0032,2026-02-05,Shopee,Esfera Labirinto,1,59.9,59.9
+KB-0033,2026-02-05,Nuvemshop,Cubo Espiral,1,15.9,15.9
+KB-0034,2026-02-06,Shopee,Esfera Labirinto,2,59.9,119.8
+KB-0035,2026-02-06,Nuvemshop,Gota Deslizante,1,49.9,49.9
+KB-0036,2026-02-09,TikTok Shop,Gota Deslizante,2,49.9,99.8
+KB-0037,2026-02-10,Nuvemshop,Corrente Flex,2,24.9,49.8
+KB-0038,2026-02-10,TikTok Shop,Esfera Labirinto,1,59.9,59.9
+KB-0039,2026-02-12,Nuvemshop,Roda Zen,2,29.9,59.8
+KB-0040,2026-02-13,Nuvemshop,Roda Zen,1,29.9,29.9
+KB-0041,2026-02-14,TikTok Shop,Gota Deslizante,2,49.9,99.8
+KB-0042,2026-02-16,Shopee,Gota Deslizante,1,49.9,49.9
+KB-0043,2026-02-18,Shopee,Roda Zen,2,29.9,59.8
+KB-0044,2026-02-19,Shopee,Pião Mini,1,44.9,44.9
+KB-0045,2026-02-25,TikTok Shop,Cubo Espiral,3,15.9,47.7
+KB-0046,2026-02-26,Nuvemshop,Anel Giratório,2,19.9,39.8
+KB-0047,2026-02-26,Shopee,Engrenagem Infinita,1,54.9,54.9
+KB-0048,2026-02-27,TikTok Shop,Anel Giratório,1,19.9,19.9
+KB-0049,2026-02-27,Shopee,Engrenagem Infinita,4,54.9,219.6
+KB-0050,2026-03-01,TikTok Shop,Gota Deslizante,2,49.9,99.8
+KB-0051,2026-03-02,TikTok Shop,Engrenagem Infinita,1,54.9,54.9
+KB-0052,2026-03-04,TikTok Shop,Gota Deslizante,3,49.9,149.7
+KB-0053,2026-03-07,TikTok Shop,Gota Deslizante,1,49.9,49.9
+KB-0054,2026-03-10,Shopee,Serpente Articulada,2,34.9,69.8
+KB-0055,2026-03-11,Nuvemshop,Roda Zen,1,29.9,29.9
+KB-0056,2026-03-11,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0057,2026-03-14,Nuvemshop,Engrenagem Infinita,1,54.9,54.9
+KB-0058,2026-03-15,TikTok Shop,Pião Mini,2,44.9,89.8
+KB-0059,2026-03-16,Shopee,Anel Giratório,1,19.9,19.9
+KB-0060,2026-03-16,Nuvemshop,Gota Deslizante,1,49.9,49.9
+KB-0061,2026-03-18,TikTok Shop,Pião Mini,1,44.9,44.9
+KB-0062,2026-03-19,TikTok Shop,Cubo Espiral,3,15.9,47.7
+KB-0063,2026-03-19,TikTok Shop,Pião Mini,1,44.9,44.9
+KB-0064,2026-03-20,TikTok Shop,Serpente Articulada,2,34.9,69.8
+KB-0065,2026-03-20,TikTok Shop,Pião Mini,1,44.9,44.9
+KB-0066,2026-03-20,Shopee,Esfera Labirinto,3,59.9,179.7
+KB-0067,2026-03-22,Nuvemshop,Serpente Articulada,1,34.9,34.9
+KB-0068,2026-03-22,TikTok Shop,Clique Hexa,2,39.9,79.8
+KB-0069,2026-03-22,TikTok Shop,Corrente Flex,2,24.9,49.8
+KB-0070,2026-03-22,TikTok Shop,Esfera Labirinto,1,59.9,59.9
+KB-0071,2026-03-23,Nuvemshop,Esfera Labirinto,1,59.9,59.9
+KB-0072,2026-03-24,Shopee,Pião Mini,1,44.9,44.9
+KB-0073,2026-03-25,Shopee,Cubo Espiral,1,15.9,15.9
+KB-0074,2026-03-25,TikTok Shop,Gota Deslizante,1,49.9,49.9
+KB-0075,2026-03-25,TikTok Shop,Pião Mini,1,44.9,44.9
+KB-0076,2026-03-26,Nuvemshop,Pião Mini,1,44.9,44.9
+KB-0077,2026-03-27,Nuvemshop,Cubo Espiral,2,15.9,31.8
+KB-0078,2026-03-28,Nuvemshop,Clique Hexa,1,39.9,39.9
+KB-0079,2026-03-29,TikTok Shop,Cubo Espiral,2,15.9,31.8
+KB-0080,2026-03-29,Shopee,Roda Zen,2,29.9,59.8
+KB-0081,2026-04-01,Shopee,Roda Zen,1,29.9,29.9
+KB-0082,2026-04-01,Shopee,Esfera Labirinto,3,59.9,179.7
+KB-0083,2026-04-02,Nuvemshop,Serpente Articulada,2,34.9,69.8
+KB-0084,2026-04-02,TikTok Shop,Esfera Labirinto,4,59.9,239.6
+KB-0085,2026-04-06,Nuvemshop,Corrente Flex,4,24.9,99.6
+KB-0086,2026-04-07,Shopee,Cubo Espiral,3,15.9,47.7
+KB-0087,2026-04-07,TikTok Shop,Pião Mini,1,44.9,44.9
+KB-0088,2026-04-07,TikTok Shop,Anel Giratório,1,19.9,19.9
+KB-0089,2026-04-07,TikTok Shop,Roda Zen,1,29.9,29.9
+KB-0090,2026-04-08,TikTok Shop,Esfera Labirinto,2,59.9,119.8
+KB-0091,2026-04-08,Shopee,Esfera Labirinto,2,59.9,119.8
+KB-0092,2026-04-08,Nuvemshop,Pião Mini,2,44.9,89.8
+KB-0093,2026-04-08,Shopee,Clique Hexa,1,39.9,39.9
+KB-0094,2026-04-08,TikTok Shop,Gota Deslizante,1,49.9,49.9
+KB-0095,2026-04-08,Shopee,Gota Deslizante,2,49.9,99.8
+KB-0096,2026-04-10,Nuvemshop,Engrenagem Infinita,4,54.9,219.6
+KB-0097,2026-04-11,Shopee,Engrenagem Infinita,2,54.9,109.8
+KB-0098,2026-04-12,TikTok Shop,Esfera Labirinto,1,59.9,59.9
+KB-0099,2026-04-12,Shopee,Anel Giratório,1,19.9,19.9
+KB-0100,2026-04-12,Shopee,Gota Deslizante,1,49.9,49.9
+KB-0101,2026-04-16,TikTok Shop,Clique Hexa,1,39.9,39.9
+KB-0102,2026-04-19,Shopee,Corrente Flex,1,24.9,24.9
+KB-0103,2026-04-20,TikTok Shop,Serpente Articulada,1,34.9,34.9
+KB-0104,2026-04-20,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0105,2026-04-20,TikTok Shop,Roda Zen,1,29.9,29.9
+KB-0106,2026-04-23,Nuvemshop,Gota Deslizante,1,49.9,49.9
+KB-0107,2026-04-25,Shopee,Gota Deslizante,2,49.9,99.8
+KB-0108,2026-04-26,Nuvemshop,Cubo Espiral,1,15.9,15.9
+KB-0109,2026-04-26,Shopee,Roda Zen,1,29.9,29.9
+KB-0110,2026-04-26,Shopee,Gota Deslizante,1,49.9,49.9
+KB-0111,2026-04-29,TikTok Shop,Engrenagem Infinita,1,54.9,54.9
+KB-0112,2026-05-04,Nuvemshop,Serpente Articulada,1,34.9,34.9
+KB-0113,2026-05-04,TikTok Shop,Roda Zen,1,29.9,29.9
+KB-0114,2026-05-05,TikTok Shop,Corrente Flex,1,24.9,24.9
+KB-0115,2026-05-05,TikTok Shop,Serpente Articulada,2,34.9,69.8
+KB-0116,2026-05-14,TikTok Shop,Engrenagem Infinita,1,54.9,54.9
+KB-0117,2026-05-16,Shopee,Roda Zen,1,29.9,29.9
+KB-0118,2026-05-16,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0119,2026-05-19,Nuvemshop,Serpente Articulada,1,34.9,34.9
+KB-0120,2026-05-19,Nuvemshop,Serpente Articulada,2,34.9,69.8
+KB-0121,2026-05-19,Nuvemshop,Gota Deslizante,1,49.9,49.9
+KB-0122,2026-05-20,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0123,2026-05-25,Nuvemshop,Corrente Flex,4,24.9,99.6
+KB-0124,2026-05-25,Nuvemshop,Gota Deslizante,1,49.9,49.9
+KB-0125,2026-05-27,Shopee,Gota Deslizante,1,49.9,49.9
+KB-0126,2026-05-27,TikTok Shop,Cubo Espiral,1,15.9,15.9
+KB-0127,2026-05-28,Nuvemshop,Serpente Articulada,1,34.9,34.9
+KB-0128,2026-06-03,Shopee,Engrenagem Infinita,2,54.9,109.8
+KB-0129,2026-06-04,Shopee,Esfera Labirinto,1,59.9,59.9
+KB-0130,2026-06-04,Nuvemshop,Gota Deslizante,3,49.9,149.7
+KB-0131,2026-06-04,Shopee,Esfera Labirinto,4,59.9,239.6
+KB-0132,2026-06-04,TikTok Shop,Esfera Labirinto,1,59.9,59.9
+KB-0133,2026-06-04,Nuvemshop,Anel Giratório,3,19.9,59.7
+KB-0134,2026-06-05,Nuvemshop,Roda Zen,1,29.9,29.9
+KB-0135,2026-06-05,Nuvemshop,Roda Zen,1,29.9,29.9
+KB-0136,2026-06-06,Shopee,Cubo Espiral,1,15.9,15.9
+KB-0137,2026-06-07,Nuvemshop,Gota Deslizante,1,49.9,49.9
+KB-0138,2026-06-09,Shopee,Serpente Articulada,2,34.9,69.8
+KB-0139,2026-06-10,TikTok Shop,Roda Zen,3,29.9,89.7
+KB-0140,2026-06-12,TikTok Shop,Esfera Labirinto,2,59.9,119.8
+KB-0141,2026-06-14,Nuvemshop,Pião Mini,1,44.9,44.9
+KB-0142,2026-06-16,TikTok Shop,Corrente Flex,3,24.9,74.7
+KB-0143,2026-06-16,TikTok Shop,Anel Giratório,1,19.9,19.9
+KB-0144,2026-06-17,Shopee,Esfera Labirinto,2,59.9,119.8
+KB-0145,2026-06-17,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0146,2026-06-20,TikTok Shop,Serpente Articulada,2,34.9,69.8
+KB-0147,2026-06-22,Shopee,Engrenagem Infinita,1,54.9,54.9
+KB-0148,2026-06-23,Shopee,Esfera Labirinto,1,59.9,59.9
+KB-0149,2026-06-27,Nuvemshop,Clique Hexa,2,39.9,79.8
+KB-0150,2026-06-27,TikTok Shop,Roda Zen,4,29.9,119.6
+KB-0151,2026-06-28,Nuvemshop,Esfera Labirinto,1,59.9,59.9
+KB-0152,2026-07-03,TikTok Shop,Serpente Articulada,1,34.9,34.9
+KB-0153,2026-07-04,Shopee,Corrente Flex,1,24.9,24.9
+KB-0154,2026-07-04,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0155,2026-07-06,Shopee,Gota Deslizante,4,49.9,199.6
+KB-0156,2026-07-09,Shopee,Pião Mini,1,44.9,44.9
+KB-0157,2026-07-11,Shopee,Corrente Flex,1,24.9,24.9
+KB-0158,2026-07-13,Shopee,Serpente Articulada,2,34.9,69.8
+KB-0159,2026-07-14,Nuvemshop,Engrenagem Infinita,1,54.9,54.9
+KB-0160,2026-07-16,TikTok Shop,Serpente Articulada,1,34.9,34.9
+KB-0161,2026-07-16,TikTok Shop,Pião Mini,3,44.9,134.7
+KB-0162,2026-07-17,Shopee,Cubo Espiral,2,15.9,31.8
+KB-0163,2026-07-17,Shopee,Pião Mini,1,44.9,44.9
+KB-0164,2026-07-18,Shopee,Esfera Labirinto,2,59.9,119.8
+KB-0165,2026-07-19,Shopee,Cubo Espiral,1,15.9,15.9
+KB-0166,2026-07-21,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0167,2026-07-21,Shopee,Anel Giratório,1,19.9,19.9
+KB-0168,2026-07-21,Shopee,Roda Zen,2,29.9,59.8
+KB-0169,2026-07-22,Nuvemshop,Cubo Espiral,1,15.9,15.9
+KB-0170,2026-07-22,Nuvemshop,Anel Giratório,1,19.9,19.9
+KB-0171,2026-07-23,TikTok Shop,Corrente Flex,1,24.9,24.9
+KB-0172,2026-07-23,Shopee,Engrenagem Infinita,2,54.9,109.8
+KB-0173,2026-07-25,Nuvemshop,Gota Deslizante,4,49.9,199.6
+KB-0174,2026-07-29,Nuvemshop,Engrenagem Infinita,1,54.9,54.9
+KB-0175,2026-07-31,TikTok Shop,Esfera Labirinto,1,59.9,59.9
+KB-0176,2026-07-31,TikTok Shop,Anel Giratório,1,19.9,19.9
+KB-0177,2026-08-02,TikTok Shop,Pião Mini,1,44.9,44.9
+KB-0178,2026-08-02,Nuvemshop,Serpente Articulada,2,34.9,69.8
+KB-0179,2026-08-02,Shopee,Serpente Articulada,2,34.9,69.8
+KB-0180,2026-08-04,Shopee,Gota Deslizante,3,49.9,149.7
+KB-0181,2026-08-04,Shopee,Gota Deslizante,1,49.9,49.9
+KB-0182,2026-08-06,TikTok Shop,Engrenagem Infinita,1,54.9,54.9
+KB-0183,2026-08-06,Nuvemshop,Roda Zen,4,29.9,119.6
+KB-0184,2026-08-09,TikTok Shop,Pião Mini,1,44.9,44.9
+KB-0185,2026-08-10,Shopee,Cubo Espiral,1,15.9,15.9
+KB-0186,2026-08-11,Shopee,Pião Mini,1,44.9,44.9
+KB-0187,2026-08-11,Nuvemshop,Corrente Flex,1,24.9,24.9
+KB-0188,2026-08-12,Shopee,Engrenagem Infinita,4,54.9,219.6
+KB-0189,2026-08-15,Shopee,Anel Giratório,3,19.9,59.7
+KB-0190,2026-08-15,Nuvemshop,Engrenagem Infinita,3,54.9,164.7
+KB-0191,2026-08-18,Shopee,Corrente Flex,1,24.9,24.9
+KB-0192,2026-08-19,TikTok Shop,Corrente Flex,1,24.9,24.9
+KB-0193,2026-08-21,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0194,2026-08-21,TikTok Shop,Anel Giratório,3,19.9,59.7
+KB-0195,2026-08-22,Shopee,Engrenagem Infinita,1,54.9,54.9
+KB-0196,2026-08-22,Nuvemshop,Gota Deslizante,3,49.9,149.7
+KB-0197,2026-08-23,Shopee,Anel Giratório,1,19.9,19.9
+KB-0198,2026-08-23,TikTok Shop,Serpente Articulada,4,34.9,139.6
+KB-0199,2026-08-23,TikTok Shop,Pião Mini,4,44.9,179.6
+KB-0200,2026-08-26,Shopee,Anel Giratório,1,19.9,19.9
+KB-0201,2026-08-26,TikTok Shop,Cubo Espiral,1,15.9,15.9
+KB-0202,2026-08-26,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0203,2026-08-28,Shopee,Roda Zen,1,29.9,29.9
+KB-0204,2026-08-28,Nuvemshop,Corrente Flex,1,24.9,24.9
+KB-0205,2026-08-31,Nuvemshop,Pião Mini,2,44.9,89.8
+KB-0206,2026-09-02,Shopee,Esfera Labirinto,1,59.9,59.9
+KB-0207,2026-09-03,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0208,2026-09-04,Shopee,Gota Deslizante,3,49.9,149.7
+KB-0209,2026-09-05,TikTok Shop,Corrente Flex,1,24.9,24.9
+KB-0210,2026-09-05,TikTok Shop,Esfera Labirinto,1,59.9,59.9
+KB-0211,2026-09-07,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0212,2026-09-08,Nuvemshop,Pião Mini,3,44.9,134.7
+KB-0213,2026-09-13,Shopee,Pião Mini,1,44.9,44.9
+KB-0214,2026-09-15,TikTok Shop,Serpente Articulada,1,34.9,34.9
+KB-0215,2026-09-15,Shopee,Pião Mini,1,44.9,44.9
+KB-0216,2026-09-20,TikTok Shop,Cubo Espiral,3,15.9,47.7
+KB-0217,2026-09-20,Nuvemshop,Serpente Articulada,2,34.9,69.8
+KB-0218,2026-09-20,Nuvemshop,Clique Hexa,1,39.9,39.9
+KB-0219,2026-09-21,TikTok Shop,Serpente Articulada,2,34.9,69.8
+KB-0220,2026-09-24,TikTok Shop,Corrente Flex,2,24.9,49.8
+KB-0221,2026-09-24,Shopee,Cubo Espiral,1,15.9,15.9
+KB-0222,2026-09-25,Nuvemshop,Esfera Labirinto,1,59.9,59.9
+KB-0223,2026-09-25,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0224,2026-09-27,Shopee,Roda Zen,1,29.9,29.9
+KB-0225,2026-09-29,TikTok Shop,Clique Hexa,1,39.9,39.9
+KB-0226,2026-10-01,TikTok Shop,Corrente Flex,1,24.9,24.9
+KB-0227,2026-10-01,Nuvemshop,Gota Deslizante,4,49.9,199.6
+KB-0228,2026-10-02,Shopee,Clique Hexa,2,39.9,79.8
+KB-0229,2026-10-03,TikTok Shop,Anel Giratório,1,19.9,19.9
+KB-0230,2026-10-03,TikTok Shop,Pião Mini,4,44.9,179.6
+KB-0231,2026-10-04,Shopee,Clique Hexa,1,39.9,39.9
+KB-0232,2026-10-04,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0233,2026-10-04,TikTok Shop,Serpente Articulada,1,34.9,34.9
+KB-0234,2026-10-05,Nuvemshop,Clique Hexa,1,39.9,39.9
+KB-0235,2026-10-05,TikTok Shop,Cubo Espiral,2,15.9,31.8
+KB-0236,2026-10-06,Nuvemshop,Clique Hexa,3,39.9,119.7
+KB-0237,2026-10-08,Shopee,Anel Giratório,2,19.9,39.8
+KB-0238,2026-10-08,Nuvemshop,Serpente Articulada,2,34.9,69.8
+KB-0239,2026-10-08,Shopee,Cubo Espiral,3,15.9,47.7
+KB-0240,2026-10-08,Nuvemshop,Gota Deslizante,1,49.9,49.9
+KB-0241,2026-10-09,Shopee,Engrenagem Infinita,1,54.9,54.9
+KB-0242,2026-10-11,TikTok Shop,Engrenagem Infinita,1,54.9,54.9
+KB-0243,2026-10-11,Shopee,Corrente Flex,3,24.9,74.7
+KB-0244,2026-10-11,TikTok Shop,Gota Deslizante,2,49.9,99.8
+KB-0245,2026-10-11,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0246,2026-10-12,Nuvemshop,Gota Deslizante,1,49.9,49.9
+KB-0247,2026-10-13,Shopee,Clique Hexa,1,39.9,39.9
+KB-0248,2026-10-13,Shopee,Engrenagem Infinita,3,54.9,164.7
+KB-0249,2026-10-13,Nuvemshop,Cubo Espiral,1,15.9,15.9
+KB-0250,2026-10-14,TikTok Shop,Anel Giratório,3,19.9,59.7
+KB-0251,2026-10-14,Shopee,Anel Giratório,2,19.9,39.8
+KB-0252,2026-10-15,Nuvemshop,Esfera Labirinto,4,59.9,239.6
+KB-0253,2026-10-15,Nuvemshop,Clique Hexa,1,39.9,39.9
+KB-0254,2026-10-15,TikTok Shop,Esfera Labirinto,1,59.9,59.9
+KB-0255,2026-10-15,Nuvemshop,Engrenagem Infinita,1,54.9,54.9
+KB-0256,2026-10-16,Nuvemshop,Roda Zen,1,29.9,29.9
+KB-0257,2026-10-16,TikTok Shop,Esfera Labirinto,1,59.9,59.9
+KB-0258,2026-10-16,Shopee,Corrente Flex,4,24.9,99.6
+KB-0259,2026-10-16,TikTok Shop,Corrente Flex,1,24.9,24.9
+KB-0260,2026-10-17,TikTok Shop,Corrente Flex,1,24.9,24.9
+KB-0261,2026-10-17,Nuvemshop,Roda Zen,1,29.9,29.9
+KB-0262,2026-10-17,TikTok Shop,Serpente Articulada,1,34.9,34.9
+KB-0263,2026-10-17,Nuvemshop,Engrenagem Infinita,1,54.9,54.9
+KB-0264,2026-10-17,Shopee,Gota Deslizante,2,49.9,99.8
+KB-0265,2026-10-18,Nuvemshop,Anel Giratório,1,19.9,19.9
+KB-0266,2026-10-18,TikTok Shop,Esfera Labirinto,1,59.9,59.9
+KB-0267,2026-10-19,Shopee,Engrenagem Infinita,1,54.9,54.9
+KB-0268,2026-10-20,Shopee,Cubo Espiral,1,15.9,15.9
+KB-0269,2026-10-20,Nuvemshop,Pião Mini,1,44.9,44.9
+KB-0270,2026-10-21,Nuvemshop,Gota Deslizante,1,49.9,49.9
+KB-0271,2026-10-21,Nuvemshop,Esfera Labirinto,1,59.9,59.9
+KB-0272,2026-10-22,Shopee,Esfera Labirinto,2,59.9,119.8
+KB-0273,2026-10-23,Shopee,Clique Hexa,1,39.9,39.9
+KB-0274,2026-10-23,Shopee,Serpente Articulada,1,34.9,34.9
+KB-0275,2026-10-23,Nuvemshop,Anel Giratório,2,19.9,39.8
+KB-0276,2026-10-24,Nuvemshop,Engrenagem Infinita,2,54.9,109.8
+KB-0277,2026-10-24,Shopee,Gota Deslizante,3,49.9,149.7
+KB-0278,2026-10-24,TikTok Shop,Gota Deslizante,1,49.9,49.9
+KB-0279,2026-10-24,Shopee,Clique Hexa,1,39.9,39.9
+KB-0280,2026-10-25,Shopee,Clique Hexa,4,39.9,159.6
+KB-0281,2026-10-25,TikTok Shop,Gota Deslizante,1,49.9,49.9
+KB-0282,2026-10-26,TikTok Shop,Anel Giratório,1,19.9,19.9
+KB-0283,2026-10-26,Shopee,Clique Hexa,2,39.9,79.8
+KB-0284,2026-10-26,Shopee,Esfera Labirinto,4,59.9,239.6
+KB-0285,2026-10-27,TikTok Shop,Anel Giratório,1,19.9,19.9
+KB-0286,2026-10-28,TikTok Shop,Pião Mini,3,44.9,134.7
+KB-0287,2026-10-28,Shopee,Serpente Articulada,2,34.9,69.8
+KB-0288,2026-10-28,Nuvemshop,Esfera Labirinto,1,59.9,59.9
+KB-0289,2026-10-28,Nuvemshop,Gota Deslizante,1,49.9,49.9
+KB-0290,2026-10-30,TikTok Shop,Engrenagem Infinita,1,54.9,54.9
+KB-0291,2026-10-30,Shopee,Esfera Labirinto,1,59.9,59.9
+KB-0292,2026-10-30,TikTok Shop,Engrenagem Infinita,4,54.9,219.6
+KB-0293,2026-10-30,Shopee,Esfera Labirinto,2,59.9,119.8
+KB-0294,2026-10-31,TikTok Shop,Esfera Labirinto,3,59.9,179.7
+KB-0295,2026-10-31,Nuvemshop,Serpente Articulada,1,34.9,34.9
+KB-0296,2026-10-31,Shopee,Serpente Articulada,3,34.9,104.7
+KB-0297,2026-10-31,Shopee,Corrente Flex,3,24.9,74.7
+KB-0298,2026-10-31,TikTok Shop,Pião Mini,1,44.9,44.9
+KB-0299,2026-10-31,Shopee,Cubo Espiral,1,15.9,15.9
+KB-0300,2026-10-31,Shopee,Pião Mini,1,44.9,44.9
