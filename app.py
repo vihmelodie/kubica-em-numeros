@@ -2,6 +2,7 @@
 
 import json
 
+import altair as alt
 import anthropic
 import streamlit as st
 
@@ -144,18 +145,54 @@ def escape_dollars(value):
 
 
 def to_frame(series, label_name, value_name):
-    """Turn a Series into a two-column DataFrame, ready for st.bar_chart."""
+    """Turn a Series into a two-column DataFrame, ready for the chart."""
     return series.rename(value_name).rename_axis(label_name).reset_index()
 
 
-def show_chart(title, series, label_name, value_name, horizontal=False):
+def format_money(value, language):
+    """Currency for the highlighted metric: R$ 65,32 (pt) or R$ 65.32 (en)."""
+    if language == "pt":
+        return format_brl(value)
+    return f"R$ {value:,.2f}"
+
+
+def number_axis(language, title, decimals=0):
+    """Value axis whose tick labels follow the language: 3.500 (pt) or 3,500 (en).
+
+    The fixed-point format (",.0f" or ",.2f") avoids scientific notation.
+    """
+    number_format = f",.{decimals}f"
+    if language == "pt":
+        # Swap separators through a placeholder: "," -> "_", "." -> ",", "_" -> "."
+        label_expr = (
+            f"replace(replace(replace(format(datum.value, '{number_format}'), "
+            "regexp(',', 'g'), '_'), regexp('\\\\.', 'g'), ','), "
+            "regexp('_', 'g'), '.')"
+        )
+        return alt.Axis(title=title, labelExpr=label_expr)
+    return alt.Axis(title=title, format=number_format)
+
+
+def show_chart(
+    title, series, label_name, value_name, language, horizontal=False, decimals=0
+):
     st.subheader(escape_dollars(title))
-    st.bar_chart(
-        to_frame(series, label_name, value_name),
-        x=label_name,
-        y=value_name,
-        horizontal=horizontal,
-        sort=False,  # keep the order given by analysis.py (months in sequence)
+    frame = to_frame(series, label_name, value_name)
+    # sort=None keeps the order given by analysis.py (months in sequence)
+    label_axis = alt.Axis(title=label_name)
+    value_axis = number_axis(language, value_name, decimals)
+    if horizontal:
+        encoding = {
+            "x": alt.X(f"{value_name}:Q", axis=value_axis),
+            "y": alt.Y(f"{label_name}:N", sort=None, axis=label_axis),
+        }
+    else:
+        encoding = {
+            "x": alt.X(f"{label_name}:N", sort=None, axis=label_axis),
+            "y": alt.Y(f"{value_name}:Q", axis=value_axis),
+        }
+    st.altair_chart(
+        alt.Chart(frame).mark_bar().encode(**encoding), width="stretch"
     )
 
 
@@ -270,7 +307,9 @@ orders = get_orders()
 st.title(text["title"])
 st.caption(text["caption"])
 
-st.metric(text["average_ticket"], format_brl(average_ticket(orders)))
+st.metric(text["average_ticket"], format_money(average_ticket(orders), language))
+
+show_ask_section(orders, text)
 
 left, right = st.columns(2)
 with left:
@@ -279,12 +318,14 @@ with left:
         translate_months(revenue_by_month(orders), language),
         text["label_month"],
         text["label_revenue"],
+        language,
     )
     show_chart(
         text["chart_top_products"].format(n=TOP_PRODUCTS),
         top_products_by_quantity(orders),
         text["label_product"],
         text["label_units"],
+        language,
         horizontal=True,
     )
 with right:
@@ -293,12 +334,13 @@ with right:
         revenue_by_channel(orders),
         text["label_channel"],
         text["label_revenue"],
+        language,
     )
     show_chart(
         text["chart_ticket_by_month"],
         translate_months(average_ticket_by_month(orders), language),
         text["label_month"],
         text["label_ticket"],
+        language,
+        decimals=2,
     )
-
-show_ask_section(orders, text)
