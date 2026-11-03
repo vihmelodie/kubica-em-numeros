@@ -2,13 +2,15 @@
 
 Run from the project root:
 
-    python evals/run_eval.py
+    python evals/run_eval.py             # 3 rounds (30 real API calls)
+    python evals/run_eval.py --rounds 1  # a single round (10 calls)
 
-Makes one real API call per question (10 calls to Claude Haiku). The correct
+Makes one real API call per question in each round, to Claude Haiku. The correct
 answers come from the sample dataset, never from hand-written numbers. Besides
-the table in the terminal, the full results are saved in evals/results.md.
+the tables in the terminal, the full results are saved in evals/results.md.
 """
 
+import argparse
 import contextlib
 import io
 import logging
@@ -33,11 +35,26 @@ from analysis import MONTH_NAMES, load_orders  # noqa: E402
 with contextlib.redirect_stderr(io.StringIO()):
     from app import MODEL, MONTH_NAMES_EN, ask_claude, build_summary  # noqa: E402
 
+DEFAULT_ROUNDS = 3
 MONEY_TOLERANCE = 0.01
 UNKNOWN_PHRASES = ("nao sei", "i don't know", "i do not know")
 ANSWER_PREVIEW_CHARS = 30
 TABLE_HEADER = ("#", "Idioma", "Pergunta", "Esperado", "Resposta da IA", "Resultado")
 REPORT_PATH = Path(__file__).parent / "results.md"
+
+# Function words used to tell Portuguese from English (words that exist in both
+# languages, such as "a", "e", "as", "do" or "no", are left out on purpose).
+PT_WORDS = {
+    "o", "os", "de", "da", "dos", "das", "em", "nos", "nas", "um", "uma", "foi",
+    "que", "para", "por", "com", "mais", "nao", "ao", "entre", "teve", "vendeu",
+    "gerou", "faturou", "sao", "pelo", "pela", "periodo", "ficou", "tem",
+}
+EN_WORDS = {
+    "the", "of", "in", "was", "were", "with", "for", "to", "is", "are", "and",
+    "from", "that", "this", "by", "most", "had", "has", "it", "its", "on", "at",
+    "i", "don't", "know", "not", "which", "came", "total", "sold", "generated",
+}
+LANGUAGE_NAMES = {"pt": "português", "en": "inglês"}
 
 
 @dataclass
@@ -71,6 +88,16 @@ def plain_words(text):
 
 def repeats_question(question, answer):
     return plain_words(question) in plain_words(answer)
+
+
+def detect_language(answer):
+    """Return 'pt' or 'en' by counting function words, or None if undecided."""
+    words = re.findall(r"[a-z']+", normalize(answer))
+    pt_hits = sum(1 for word in words if word in PT_WORDS)
+    en_hits = sum(1 for word in words if word in EN_WORDS)
+    if pt_hits == en_hits:
+        return None
+    return "pt" if pt_hits > en_hits else "en"
 
 
 def first_mentioned(answer, candidates):
@@ -109,11 +136,9 @@ def format_number(value):
 
 
 def name_case(language, question, expected, expected_text, candidates):
-    """The right name must come first, and the answer must not repeat the question."""
+    """The right name must be the first one mentioned in the answer."""
 
     def check(answer):
-        if repeats_question(question, answer):
-            return False, "a resposta repete a pergunta"
         if first_mentioned(answer, candidates) != expected:
             return False, "o nome certo não é o primeiro citado"
         return True, ""
@@ -191,6 +216,18 @@ def build_cases(orders):
     ]
 
 
+def check_answer(case, answer):
+    """Apply the rules shared by every question, then the question's own rule."""
+    if repeats_question(case.question, answer):
+        return False, "a resposta repete a pergunta"
+    detected = detect_language(answer)
+    if detected != case.language:
+        found = LANGUAGE_NAMES.get(detected, "idioma não identificado")
+        expected = LANGUAGE_NAMES[case.language]
+        return False, f"a resposta deveria estar em {expected} (detectado: {found})"
+    return case.check(answer)
+
+
 def run_case(case, summary):
     """Ask the app's AI one question; return (answer, status, note)."""
     try:
@@ -199,8 +236,12 @@ def run_case(case, summary):
         return "", "Falha (chave)", "a chave da API não está configurada"
     except anthropic.APIError:
         return "", "Falha (API)", "a chamada à API falhou"
-    passed, note = case.check(answer)
+    passed, note = check_answer(case, answer)
     return answer, "Acerto" if passed else "Erro", note
+
+
+def count_hits(results):
+    return sum(1 for r in results if r.status == "Acerto")
 
 
 def print_table(results):
@@ -215,56 +256,90 @@ def print_table(results):
         print("  ".join(cell.ljust(width) for cell, width in zip(row, widths)))
 
 
-def write_report(results, hits):
-    """Save question, correct answer, full AI answer and result for each case."""
+def write_report(rounds):
+    """Save question, correct answer, full AI answer and result of every round."""
+    per_round = len(rounds[0])
+    total_hits = sum(count_hits(results) for results in rounds)
     lines = [
         "# Resultados do eval",
         "",
         f"- Data: {date.today().isoformat()}",
         f"- Modelo: `{MODEL}`",
-        f"- Total de acertos: **{hits}/{len(results)}**",
+        f"- Rodadas: {len(rounds)} ({per_round} perguntas cada)",
+        f"- Total de acertos: **{total_hits}/{len(rounds) * per_round}**",
         "",
-        "| # | Idioma | Pergunta | Resposta certa | Resultado |",
-        "|---|---|---|---|---|",
+        "## Acertos por rodada",
+        "",
+        "| Rodada | Acertos |",
+        "|---|---|",
     ]
-    for r in results:
+    for index, results in enumerate(rounds, start=1):
+        lines.append(f"| {index} | {count_hits(results)}/{per_round} |")
+
+    round_headers = " | ".join(f"Rodada {i}" for i in range(1, len(rounds) + 1))
+    lines += [
+        "",
+        "## Resultado por pergunta",
+        "",
+        f"| # | Idioma | Pergunta | Resposta certa | {round_headers} |",
+        "|---|---|---|---|" + "---|" * len(rounds),
+    ]
+    for position, first in enumerate(rounds[0]):
+        statuses = " | ".join(results[position].status for results in rounds)
         lines.append(
-            f"| {r.number} | {r.case.language} | {r.case.question} | "
-            f"{r.case.expected_text} | {r.status} |"
+            f"| {first.number} | {first.case.language} | {first.case.question} | "
+            f"{first.case.expected_text} | {statuses} |"
         )
-    for r in results:
-        lines += [
-            "",
-            f"## {r.number}. {r.case.question}",
-            "",
-            f"- **Idioma:** {r.case.language}",
-            f"- **Resposta certa:** {r.case.expected_text}",
-            f"- **Resultado:** {r.status}",
-        ]
-        if r.note:
-            lines.append(f"- **Motivo:** {r.note}")
-        # Code block so GitHub does not render paired "$" signs as math.
-        lines += ["- **Resposta completa da IA:**", "", "```text",
-                  r.answer or "(sem resposta)", "```"]
+
+    for index, results in enumerate(rounds, start=1):
+        lines += ["", f"## Rodada {index}: {count_hits(results)}/{per_round}"]
+        for r in results:
+            lines += [
+                "",
+                f"### {r.number}. {r.case.question}",
+                "",
+                f"- **Idioma:** {r.case.language}",
+                f"- **Resposta certa:** {r.case.expected_text}",
+                f"- **Resultado:** {r.status}",
+            ]
+            if r.note:
+                lines.append(f"- **Motivo:** {r.note}")
+            # Code block so GitHub does not render paired "$" signs as math.
+            lines += ["- **Resposta completa da IA:**", "", "```text",
+                      r.answer or "(sem resposta)", "```"]
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--rounds", type=int, default=DEFAULT_ROUNDS,
+                        help=f"number of rounds (default {DEFAULT_ROUNDS})")
+    rounds_wanted = parser.parse_args().rounds
+
     sys.stdout.reconfigure(encoding="utf-8")
     orders = load_orders()
     summary = build_summary(orders)
     cases = build_cases(orders)
 
-    print(f"Enviando {len(cases)} perguntas à IA do app...\n")
-    results = [
-        Result(number, case, *run_case(case, summary))
-        for number, case in enumerate(cases, start=1)
-    ]
+    rounds = []
+    for index in range(1, rounds_wanted + 1):
+        print(f"Rodada {index}/{rounds_wanted}: enviando {len(cases)} perguntas "
+              "à IA do app...\n")
+        results = [
+            Result(number, case, *run_case(case, summary))
+            for number, case in enumerate(cases, start=1)
+        ]
+        print_table(results)
+        print(f"\nRodada {index}: {count_hits(results)}/{len(cases)}\n")
+        rounds.append(results)
 
-    print_table(results)
-    hits = sum(1 for r in results if r.status == "Acerto")
-    print(f"\nTotal de acertos: {hits}/{len(cases)}")
-    write_report(results, hits)
+    total_hits = sum(count_hits(results) for results in rounds)
+    per_round = " | ".join(
+        f"Rodada {i}: {count_hits(r)}/{len(cases)}" for i, r in enumerate(rounds, 1)
+    )
+    print(per_round)
+    print(f"Total de acertos: {total_hits}/{rounds_wanted * len(cases)}")
+    write_report(rounds)
     print(f"Resultados completos salvos em {REPORT_PATH.relative_to(ROOT)}")
 
 
