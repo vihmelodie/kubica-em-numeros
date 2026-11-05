@@ -10,11 +10,11 @@ Quem vende em vários marketplaces costuma conferir os números canal por canal,
 
 ## Captura de tela
 
-<!-- Adicione aqui a imagem do app, por exemplo: ![Painel Kubica em Números](docs/screenshot.png) -->
+![Painel Kubica em Números em português](docs/app_pt.png)
 
 ## App publicado
 
-<!-- Adicione aqui o link do app no Streamlit Community Cloud depois da publicação. -->
+https://kubica-em-numeros.streamlit.app/
 
 ## Como rodar localmente
 
@@ -84,11 +84,11 @@ Sellers on several marketplaces usually check their numbers channel by channel, 
 
 ### Screenshot
 
-<!-- Add the app image here, for example: ![Kubica em Números dashboard](docs/screenshot.png) -->
+![Kubica in Numbers dashboard in English](docs/app_en.png)
 
 ### Live app
 
-<!-- Add the Streamlit Community Cloud link here after publishing. -->
+https://kubica-em-numeros.streamlit.app/
 
 ### Running locally
 

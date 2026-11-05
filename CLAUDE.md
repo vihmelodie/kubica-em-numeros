@@ -23,6 +23,7 @@ A versão pública usa dados fictícios no mesmo formato dos dados reais da Kubi
 - Nomes no código em inglês.
 - README e textos do app em português.
 - Fazer commits pequenos, com mensagens claras em inglês.
+- Descrição de pull request: escreva só depois do último commit da branch, cobrindo todos os commits (confira com `git log main..HEAD`), com as seções Summary, Details (se houver) e Testing. Em Testing, liste os testes automáticos e pergunte se houve teste manual no navegador antes de finalizar.
 
 ## 4. Regras de segurança
 

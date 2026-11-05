@@ -1,0 +1,4 @@
+[theme]
+base = "dark"
+# Same blue used by the charts, so the text input outline is not red.
+primaryColor = "#0068c9"
