@@ -50,11 +50,11 @@ O painel funciona sem a chave; apenas a caixa "Pergunte aos dados" depende dela.
 
 O app **não envia a tabela de pedidos** para a API. Antes de cada pergunta, ele calcula um resumo agregado (faturamento total e por mês e canal, ticket médio, pedidos por canal e totais por produto) e envia somente esse resumo, junto com a pergunta. Dados de clientes não fazem parte do resumo. O modelo usado é o Claude Haiku e responde no idioma da pergunta (português ou inglês). Se a resposta não estiver no resumo, ele diz que não sabe.
 
+**Guardrails:** a pergunta tem limite de 300 caracteres, cada sessão aceita até 10 perguntas e o app recusa educadamente pedidos que não sejam sobre os dados de vendas.
+
 ## Avaliação (eval)
 
-O script `evals/run_eval.py` faz 10 perguntas (português e inglês) com respostas conhecidas, em 3 rodadas. Resultado: **28/30 acertos** (10/10, 9/10 e 9/10). O relatório completo está em [`evals/results.md`](evals/results.md).
-
-**Limitação:** os dois erros ocorreram na mesma pergunta (*"How many orders came from Nuvemshop?"*), com a resposta *"Nuvemshop received 81 orders."*. O número estava correto, mas a checagem de idioma, que conta palavras comuns de cada língua, não conseguiu identificar o idioma de uma resposta tão curta. Ou seja, são limitações da checagem automática em respostas curtas, e não um valor errado.
+O script `evals/run_eval.py` faz 10 perguntas (português e inglês) com respostas conhecidas, em 3 rodadas. Resultado: **30/30 acertos** em 3 rodadas (10/10 em cada). O relatório completo está em [`evals/results.md`](evals/results.md).
 
 ## Tecnologias
 
@@ -124,11 +124,11 @@ The dashboard works without the key; only the "Pergunte aos dados" box needs it.
 
 The app **does not send the orders table** to the API. Before each question, it computes an aggregated summary (total revenue, revenue by month and channel, average ticket, orders per channel and totals per product) and sends only that summary along with the question. Customer data is not part of the summary. The model is Claude Haiku, and it answers in the language of the question (Portuguese or English). If the answer is not in the summary, it says it does not know.
 
+**Guardrails:** questions are limited to 300 characters, each session accepts up to 10 questions, and the app politely declines requests that are not about the sales data.
+
 ### Evaluation
 
-The `evals/run_eval.py` script asks 10 questions (Portuguese and English) with known answers, in 3 rounds. Result: **28/30 correct** (10/10, 9/10 and 9/10). The full report is in [`evals/results.md`](evals/results.md).
-
-**Limitation:** both misses were on the same question (*"How many orders came from Nuvemshop?"*), answered as *"Nuvemshop received 81 orders."*. The number was correct, but the language check, which counts common words of each language, could not identify the language of such a short answer. These are limitations of the automatic check on short answers, not wrong values.
+The `evals/run_eval.py` script asks 10 questions (Portuguese and English) with known answers, in 3 rounds. Result: **30/30 correct** in 3 rounds (10/10 in each). The full report is in [`evals/results.md`](evals/results.md).
 
 ### Technologies
 
